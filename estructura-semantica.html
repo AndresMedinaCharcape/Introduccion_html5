@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>Estructura Semantica </title>
+        <meta charset="utf-8">
+        <meta name="descripcion" content="Clase 2 del curso HTML5">
+        <!-- con link podemos poner un icono que va en la pestaña de la ventana
+        la imagen debe estar en la misma carpeta que esta este archivo-->
+        <link rel="icon" href="favicon.png">
+        <!--
+            Etiqueta de CSS
+        -->
+        <style> 
+            h1 {    
+                /*La propiedad font-size especifica la dimension de la letra
+                /*https://developer.mozilla.org/es/docs/Web/CSS/font-size*/
+                font-size: 10px;
+                /*La propiedad color establece el color con el que se muestra el texto
+                https://librosweb.es/referencia/css/color.html*/
+                color: red;
+            }
+
+            h6 {
+                font-size: 80px;
+                color: green;
+            }
+            img {
+                 /*Sirve para establecer la anchura de los elementos de bloque (elementos block)
+                y las imagenes, que son la excepcion ya que es un elemento inline
+                Valores: 
+                1. auto : por defecto, el navegador determina la anchura de cada elemento teniendo en cuenta otros
+                2. em: toma como referenciae al tamaño de letra del propio elemento
+                https://librosweb.es/referencia/css/width.html
+                */
+
+                width: 250px;
+                /*Sirve para establecer la altura de los elementos de bloque (elementos block)
+                y las imagenes, que son la excepcion ya que es un elemento inline
+                Valores: 
+                1. auto : por defecto, el navegador determina la altura de cada elemento teniendo en cuenta otros
+                2. em: toma como referencia al tamaño de letra del propio elemento, no pueden ser negativos
+                3. % : toma la referencia la altura de su elemento contenedor
+                https://librosweb.es/referencia/css/height.html*/
+                height: auto;
+            }
+        </style>
+        
+    </head>
+    <body>
+        <!--
+            Etiquedas basicas de HTML: Encabezados, indican jerarquia en la pagina
+            h1 es de Primer Nivel
+            h2 es de Segundo Nivel, es el subtitulo de 1
+            h3 es de tercer nivel, es el subtitulo de 2
+            y asi sucesivamente
+
+            <center> Hola como estas </center> //Para poner un texto centrado, obsoleto
+        <hgroup>
+            <h1>Hola </h1> //Unir 2 encabezados, obsoleto
+            <h2>Bebe </h2>
+        </hgroup>
+        -->
+        
+        <h1>Encabezado 1 </h1>
+        <h2>Encabezado 2 </h2>
+        <h3>Encabezado 3 </h3>
+        <h4>Encabezado 4 </h4>
+        <h5>Encabezado 5 </h5>
+        <h6>Encabezado 6 </h6>
+
+        <!-- Los parrafos son bloques de texto <p>-->
+        <p> Esto es un parrafo. Se simboliza con la etiqueta p</p>
+        <!--Elementos de bloque: (block)
+            Elementos de linea: (inline)
+        
+        Los elementos inline se colocan uno al lado del otro hasta completar el espacio disponible, luego se colocan debajo del otro
+        
+        Ejemplo
+        <img>
+        <input>
+        <label>
+        <a>
+        <spam>
+
+        Generan una separacion por defecto como los img, ya que se comportan como un texto por eso se deja esa separacion
+        La separacion esta tanto horizontal como vertical
+        Ejemplo  1: Si ponemos la etiqueta
+        <style>
+            body {
+                font-size: 0; //Estamos indicando que las letras sean de tamaño 0, todo el texto desaparece
+                              //Al desaparecer el texto, las separaciones de las imagenes que estan una de la otra se anulan
+            }
+        </style>
+
+        Ejemplo 2:Si ponemos la etiqueta
+        <style>
+            body {
+                line-height: 0;  //Al poner los altos de linea del cuerpo en 0, SOLO las separaciones verticales de la imagen pasan a 0
+            }
+        </style>
+    
+        Los elementos "block" reservan todo el espacio horizontal aunque no lo ocupcen por completo
+        Un elemento de bloque a pesar que no ocupa todo lo horizontal, no deja espacio a otro elemento ya que es propiedad
+        <h1>
+        <p>
+        <ul>
+        <li>
+|-->
+
+    
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+
+<!--
+    Una duda: Como poner una imagen junto a un parrafo, si la imagen es inline y el parrafo es block??
+    Aqui la solucion: Se pone la etiqueta de imagen luego del parrafo
+
+    <p><img src="charcape.jpg"> Esto es una imagen Esto es una imagen Esto es una imagen Esto es una imagen Esto es una imagen
+    Esto es una imagen Esto es una imagen Esto es una imagen Esto es una imagen </p>
+
+    En esta solucion lo que hace es poner una imagen dentro de un parrafo, quiere decir que el parrafo va a tener el mismo
+    salto de linea que un texto
+
+    Es por eso que la solucion mas eficaz seria la etiqueta <span></span>
+    Esto es un contenedor, sirve para aplicar estilo al texto o agrupa elementos en linea
+
+    Ponemos las imagenes en un div, porque sino la primera imagen se pondra a lado de "pais", y esas imagenes 
+    deben estar abajo
+
+
+-->
+<img src="charcape.jpg">
+<p> Esta imagen representa a todos los charcape que hay en el pais</p>
+<div>
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+        <img src="charcape.jpg">
+</div>
+
+<!--
+    Estructura semantica
+    En HTML4 habia muy pocas etiquetas semanticas
+    Para los casos en los que no habian un etiqueta especifica, se utilizaban 2 etiquetas genericas
+
+    Son: <div></div>  (bloque)  y <span></span> (inline)
+
+    HTML5 introduce nuevas etiquetas semanticas para elementos block e inline
+
+    Para elementos block:
+    header  (encabezados, no confundir con h1 que son titulos y subtitulos)
+    nav     (navegacion para poner menus)
+    footer   (pie de pagina)
+    article   (elementos o contenido independiente)
+    aside      (elementos o contenido relacionado o secundario)
+    section    (secciones o divisiones de un contenido)
+    main    (para mostrar el contenido principal, debe ser unico)
+
+-->
+
+<section>
+    <article>
+        <p> Hola </p>
+    </article>
+</section>
+    </body>
+</html>
