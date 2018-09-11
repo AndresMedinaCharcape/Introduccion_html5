@@ -1,0 +1,83 @@
+<!--
+    Sintaxis de HTML
+    HTML usa etiquetas, las que tienen la siguiente estructura
+    <p></p> : Indica parrafo
+
+    Las etiquetas son de 2 tipos
+    * De apertura y cierre
+    <h1></h1> : Titulos
+    <ul></ul> : Listas
+    <p></p> : Parrafos
+
+    * Self-Closing: No necesitan parejas
+    <img> : Para Imagen
+    <br>  : Salto de Linea
+    <meta>
+    <input>
+
+    En HTML5, no es obligatorio (como era en XHTML) cerrar las 
+    etiquetas self_closing
+    <input>  o <input />
+
+    ATRIBUTOS:
+    Se utilizan para añadir datos adicionales
+    para un elemento. Cada etiqueta define un elemento html
+    Se escriben dentro de la etiqueta de apertura. Su sintaxis es la siguiente:
+    
+    atributo="valor"
+    atributo="valor1 valor2 valor3";
+    atributo1 = "valor1" atributo2="valor2"
+
+    Ejemplos de Atributos
+    <img src="imagen.jpg">
+    <img src="imagen.jpg" alt="Imagen">  //alt indica texto alternativo
+    <img src="imagen.jpg" all="Imagen" class="imagen imagen-principal imagen-banner">
+    //Las clases se utilizan para manipular con elementos CSS o Javascript
+
+    Algunos atributos no requieren valor
+    <input require>
+
+    Existen atributos obligatorios y opcionales
+    <img src=""> //img requiere este atributo para que se muestre imagen
+    <a href="">Link </a> //sirve para enlaces, es necesario ese atributo
+
+    Opcionales:
+    <img src="imagen.jpg" id="imagen"> //el id es una atributo opcional
+
+    Los atributos data- :Sirven para poner atributos para que me den la gana
+-->
+
+<!--
+    Estructura de todo documento HTML
+    quirks mode: cuando el navegador no encuentra el doctype
+    ya que cuando no se pone el doctype el navegador te detecta
+    como si tuvieras un codigo de hace 20 años
+    cuando no existian normas, no cargaria la mayoria de css
+    el navegador entra en modo quirks
+    charset: abreviacion de caracteres, especificar al navegador
+    de que caracteres voy a utilizar
+-->
+<!DOCTYPE html>
+
+<!-- Indica el idioma en español de la pagina -->
+<html lang="es">
+    <head>
+        <!-- Para los metadatos
+        El visitante de la pagina no ve este contenido
+        Informacion que necesita el navegador-->
+        <title> Mi primera pagina web </title>
+        <meta charset="utf-8">
+        <!-- Esto sirve para poner descripcion, asi aparece cuando buscas en google-->
+        <meta name="description" content="Este es mi primera descripcion">
+    </head>
+    <body>
+        <!-- Para los contenidos visuales--> 
+        <p> En HTML un parrafo se escribe asi mira otra vez  </p>
+        <!-- Como queremos poner <p> el navegador lo va a procesar
+            entonces usamos entidades
+            &lt para poner <
+            &gt para poner >
+        -->
+            &lt;p&gt;hola&lt;/p&gt;
+    </body>
+</html>
